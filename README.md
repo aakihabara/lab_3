@@ -154,7 +154,14 @@ pow(1, 100) = 1 * 1 * ...* 1 = 1
 <br>
 Основные задачи отправлены на гит в виде .html файла  
 <br>
-![Задача 23](23.jpg)  
+<image src="23.jpg" alt="Задача 23">  
+<image src="24.jpg" alt="Задача 24">
+<image src="25.jpg" alt="Задача 25">
+<image src="26.jpg" alt="Задача 26">
+<image src="27.jpg" alt="Задача 27">
+<image src="28.jpg" alt="Задача 28">
+<image src="29.jpg" alt="Задача 29">
+<image src="30.jpg" alt="Задача 30">
 <br>
 Вывод  
 <br>
