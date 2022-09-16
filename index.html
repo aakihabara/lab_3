@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zad1()
+        {
+            alert( null || 2 || undefined );
+        }
+
+        function zad2()
+        {
+            alert( alert(1) || 2 || alert(3) );
+        }
+
+        function zad3()
+        {
+            alert( 1 && null && 2 );
+        }
+
+        function zad4()
+        {
+            alert( alert(1) && alert(2) );
+        }
+
+        function zad5()
+        {
+            alert( null || 2 && 3 || 4 );
+        }
+
+        function zad6()
+        {
+            let age = prompt("Введите значение переменной",1);
+            if((Number(age) > 13) && (Number(age) < 91))
+            {
+                alert("Переменная age находится в диапазоне между 14 и 90 включительно.");
+            }
+            else
+            {
+                alert("Переменная age не находится в диапазоне между 14 и 90 включительно.");
+            }
+        }
+
+        function zad71()
+        {
+            let age = prompt("Введите значение переменной",1);
+            if(!(Number(age) > 13) || !(Number(age) < 91))
+            {
+                alert("Переменная age не находится в диапазоне между 14 и 90 включительно.");
+            }
+            else
+            {
+                alert("Переменная age находится в диапазоне между 14 и 90 включительно.");
+            }
+        }
+
+        function zad72()
+        {
+            let age = prompt("Введите значение переменной",1);
+            if((Number(age) < 14) || (Number(age) > 90))
+            {
+                alert("Переменная age не находится в диапазоне между 14 и 90 включительно.");
+            }
+            else
+            {
+                alert("Переменная age находится в диапазоне между 14 и 90 включительно.");
+            }
+        }
+
+        function zad8()
+        {
+            if (-1 || 0) alert( 'first' );
+            if (-1 && 0) alert( 'second' );
+            if (null || -1 && 1) alert( 'third' );
+
+        }
+
+        function zad9()
+        {
+            let login = prompt("Кто там?");
+            if(login == "" || login == null)
+            {
+                alert("Отменено");
+                return;
+            }
+
+            if(login == "Админ")
+            {
+                let pass = prompt("Введите пароль");
+                if(pass == "" || pass == null)
+                {
+                    alert("Отменено");
+                    return;
+                }
+
+                if(pass == "Я главный")
+                    alert("Здравствуйте!")
+                else
+                {
+                    alert("Я вас не знаю");
+                    return;
+                }
+            }
+            else
+            {
+                alert("Я вас не знаю");
+                return;
+            }
+        }
+
+        function zad10()
+        {
+            let i = 3;
+            while (i) {
+                alert( i-- );
+            }
+
+        }
+
+        function zad11pref()
+        {
+            let i = 0;
+            while (++i < 5) alert( i );
+        }
+
+        function zad11post()
+        {
+            let i = 0;
+            while (i++ < 5) alert( i );
+        }
+
+        function zad12post()
+        {
+            for (let i = 0; i < 5; i++) alert( i );
+        }
+
+        function zad12pref()
+        {
+            for (let i = 0; i < 5; ++i) alert( i );
+        }
+
+        function zad13()
+        {
+            for (let i = 2; i <= 10; i++)
+            {
+                if(i % 2 == 0)
+                    alert(i);
+            }
+        }
+
+        function zad14()
+        {
+            let i = 0;
+            while(i < 3){
+                alert( `number ${i}!` );
+                i++;
+            }
+        }
+
+        function zad15()
+        {
+            let n;
+            do{
+                n = prompt("Введите число, которое больше 100", 50);
+            }while(n <= 100)
+        }
+
+        function zad16()
+        {
+            document.getElementById("zad16m").innerHTML = "";
+            let n = prompt("Введите число > 2", 10);
+            if(n < 3)
+            {
+                alert("Вы ввели некорректное число");
+                return;
+            }
+            else
+            {
+                for(let i = 2; i <= n; i++)
+                {
+                    let yes = true;
+                    for(let j = 2; j < i; j++)
+                    {
+                        if(i % j !== 0)
+                            continue;
+                        else
+                            yes = false;
+                            break;
+                    }
+                    if(yes)
+                        document.getElementById("zad16m").innerHTML += i + " ";
+                }
+            }
+        }
+
+        function zad17()
+        {
+            let browser = prompt("Введите название браузера: ", "Chrome")
+            if (browser == "Edge"){
+                alert("You've got the Edge!")
+            }
+            else if((browser == "Chrome") || (browser == "Firefox") || (browser == "Safari") || (browser == "Opera")){
+                alert("Okay we support these browsers too");
+            }
+            else{
+                alert("We hope that this page looks ok!");
+            }
+        }
+
+        function zad18()
+        {
+            const number = +prompt("Введите число между 0 и 3");
+            switch(number)
+            {
+                case 0:
+                    alert('Вы ввели число 0');
+                    break;
+                case 1:
+                    alert('Вы ввели число 1');
+                    break;
+                case 2:
+                case 3:
+                    alert('Вы ввели число 2, а может и 3');
+                    break;
+            }
+        }
+
+        function zad191()
+        {
+            let age = prompt("Введите кол-во лет");
+            checkAge1(age);
+        }
+
+        function checkAge1(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                return confirm('Родители разрешили?');
+            }
+        }
+
+        function zad192()
+        {
+            let age = prompt("Введите кол-во лет");
+            checkAge2(age);
+        }
+
+        function checkAge2(age) {
+            if (age > 18) {
+                return true;
+            }
+            return confirm('Родители разрешили?');
+        }
+
+        function zad201()
+        {
+            let age = prompt("Введите кол-во лет");
+            checkAge3(age);
+        }
+
+        function checkAge3(age) {
+            (age > 18) ? true : confirm('Родители разрешили?')
+        }
+
+        function zad202()
+        {
+            let age = prompt("Введите кол-во лет");
+            checkAge4(age);
+        }
+
+        function checkAge4(age) {
+            (age > 18) || true && confirm('Родители разрешили?');
+        }
+
+        function zad21()
+        {
+            let a = prompt("Введите число a", 5);
+            let b = prompt("Введите число b", 2);
+            min(a,b);
+        }
+
+        function min(x,y)
+        {
+            if((isNaN(x)) || (isNaN(y)))
+            {
+                alert("Вы ввели не число");
+                return;
+            }
+            if(x > y)
+                alert(y);
+            else if(x < y)
+                 alert(x);
+            else
+                alert(x);
+        }
+
+        function zad22()
+        {
+            let a = prompt("Введите число x", 5);
+            let b = prompt("Введите число n", 2);
+            pow(a,b);
+        }
+
+        function pow(x,n)
+        {
+            if((isNaN(x)) || (isNaN(n)))
+            {
+                alert("Вы ввели не число");
+                return;
+            }
+            if(n == 0)
+            {
+                alert(1);
+                return;
+            }
+            let a = x;
+            for(let i = 1; i < n; i++)
+            {
+                a *= x;
+            }
+            alert(a)
+        }
+
+    </script>
+        <button onclick="zad1()">Задание 1</button><br><br>
+        <button onclick="zad2()">Задание 2</button><br><br>
+        <button onclick="zad3()">Задание 3</button><br><br>
+        <button onclick="zad4()">Задание 4</button><br><br>
+        <button onclick="zad5()">Задание 5</button><br><br>
+        <button onclick="zad6()">Задание 6</button><br><br>
+        <button onclick="zad71()">Задание 7.1</button><br><br>
+        <button onclick="zad72()">Задание 7.2</button><br><br>
+        <button onclick="zad8()">Задание 8</button><br><br>
+        <button onclick="zad9()">Задание 9</button><br><br>
+        <button onclick="zad10()">Задание 10</button><br><br>
+        <button onclick="zad11pref()">Задание 11.1</button><br><br>
+        <button onclick="zad11post()">Задание 11.2</button><br><br>
+        <button onclick="zad12post()">Задание 12.1</button><br><br>
+        <button onclick="zad12pref()">Задание 12.2</button><br><br>
+        <button onclick="zad13()">Задание 13</button><br><br>
+        <button onclick="zad14()">Задание 14</button><br><br>
+        <button onclick="zad15()">Задание 15</button><br><br>
+        <button onclick="zad16()">Задание 16</button><br><br>
+        <button onclick="zad17()">Задание 17</button><br><br>
+        <button onclick="zad18()">Задание 18</button><br><br>
+        <button onclick="zad191()">Задание 19.1</button><br><br>
+        <button onclick="zad192()">Задание 19.2</button><br><br>
+        <button onclick="zad201()">Задание 20.1</button><br><br>
+        <button onclick="zad202()">Задание 20.2</button><br><br>
+        <button onclick="zad21()">Задание 21</button><br><br>
+        <button onclick="zad22()">Задание 22</button><br><br>
+</body>
+</html>
